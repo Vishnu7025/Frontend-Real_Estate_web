@@ -8,7 +8,7 @@ function App() {
   }
   return (
     <div>
-     <h1>heoo</h1>
+     <h1 className='visu'>heoo</h1>
      <Mycombo />
      <Second />
     </div>
