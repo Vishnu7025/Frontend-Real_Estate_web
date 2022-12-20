@@ -10,6 +10,7 @@ function App() {
     { id: 2,name: "pinapple", color:"yellow"},
  ]
   const [Count, setCount] = useState(0);
+  const [Name ,setName] = useState('vishnu');
   return (
     <div>
      <Second />
@@ -19,10 +20,10 @@ function App() {
      <div>
         <button onClick={()=> setCount(Count+1)} className='butt'>Add+</button>
         <button onClick={()=> setCount(Count-1)} className="butt">Minus-</button>
-
      </div>
-    
+    <button onClick={()=> setName('')} className="butt">add name</button>
      <h1>Counter:{Count}</h1>
+     <h1>Name:{Name}</h1>
     </div>
     
   );
