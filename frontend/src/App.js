@@ -22,7 +22,7 @@ function App() {
         <button onClick={()=> setCount(Count-1)} className="butt">Minus-</button>
      </div>
     <button onClick={()=> setName('')} className="butt">add name</button>
-     <h1>Counter:{Count}</h1>
+     <h1 className='count'>Counter:{Count}</h1>
      <h1>Name:{Name}</h1>
     </div>
     
