@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.butt{
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  color: #1054dd;
+  font-size: large;
+  background-color: #61dafb;
+  
+}
+.butt:hover{
+  color: red;
+  background-color: #1054dd;
+}

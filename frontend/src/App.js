@@ -1,20 +1,27 @@
 // import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Second from './Second';
+import { useState } from 'react';
 
 function App() {
   const theFruits = [
     {id:1,name:"apple",color:"red"},
     { id: 2,name: "pinapple", color:"yellow"},
-    { id: 3,name: "grapes", color:"green"},
-    { id: 4,name: "green apple", color:"green"},
-  ]
+ ]
+  const [Count, setCount] = useState(0);
   return (
     <div>
      <Second />
      { theFruits.map((fruits)=>{
       return <h2 key={fruits.id}>This is {fruits.name} with have color {fruits.color}</h2>
      })}
+     <div>
+        <button onClick={()=> setCount(Count+1)} className='butt'>Add+</button>
+
+     </div>
+    
+     <h1>Counter:{Count}</h1>
     </div>
     
   );
