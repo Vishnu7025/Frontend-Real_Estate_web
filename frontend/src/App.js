@@ -24,6 +24,8 @@ function App() {
     <button onClick={()=> setName('')} className="butt">add name</button>
      <h1 className='count'>Counter:{Count}</h1>
      <h1>Name:{Name}</h1>
+     { Count > 10 ? <h1> more than 10</h1> : <h1>less than 10</h1>}
+     
     </div>
     
   );
