@@ -18,6 +18,7 @@ function App() {
      })}
      <div>
         <button onClick={()=> setCount(Count+1)} className='butt'>Add+</button>
+        <button onClick={()=> setCount(Count-1)} className="butt">Minus-</button>
 
      </div>
     
