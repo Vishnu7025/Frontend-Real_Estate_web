@@ -2,9 +2,12 @@ import React from 'react'
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 function Login() {
   const [btnColor,setBtnColor] = useState('error');
-
+  const useStyles = makeStyles({
+    
+  })
   return (
     <div style={{width:"50%",border:'2px solid black'}}>
         <h1>This is login page</h1>
