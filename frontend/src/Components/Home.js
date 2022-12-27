@@ -1,14 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CustomCard from './CustomCard'
+import { Button, Typography,Grid } from "@mui/material";
+import { ScopedCssBaseline } from '@mui/material';
 
 function Home() {
   return (
-    <div>
-        <h1>This is home page</h1>
-        <Link to='/Login'>login</Link>
-        <br />
-        <Link to='/listing'>listing</Link>
-    </div>
+  <>
+        <Grid item xs={8}>
+          <CustomCard />
+        </Grid>
+        <Grid item xs={4}>
+              <CustomCard />
+                </Grid>
+        <Grid item xs={4}>
+              <CustomCard />
+                </Grid>
+        <Grid item xs={8}>
+              <CustomCard />
+                </Grid>
+  </>
+
   )
 }
 
