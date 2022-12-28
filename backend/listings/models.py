@@ -1,5 +1,7 @@
 from django.db import models
+from django.contrib.gis.db import models
 from django.utils import timezone
+from django.contrib.gis.geos import Point
 
 # Create your models here.
 class listing(models.Model):
@@ -18,8 +20,8 @@ class listing(models.Model):
     )
     listing_type = models.CharField(max_length=20,choices=choices_listing_type)
     choices_property_status = (
-        ('Sale,Sale'),
-        ('Rent,Rent')
+        ('Sale','Sale'),
+        ('Rent','Rent'),
     )
     property_status = models.CharField(max_length=20,blank=True,null=True,choices=choices_property_status)
     price = models.DecimalField( max_digits=50,decimal_places=0)
@@ -36,4 +38,5 @@ class listing(models.Model):
     cctv = models.BooleanField(default=False)
     parking = models.BooleanField(default=False)
     date_posting = models.DateTimeField(default=timezone.now)
+    location = models.PointField(srid=4326, blank=True, null=True)
 
