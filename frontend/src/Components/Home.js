@@ -1,20 +1,18 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-import CustomCard from './CustomCard'
+
+//Mui imports
 import { Button, Typography,Grid ,AppBar,Toolbar} from "@mui/material";
 import {makeStyles} from '@mui/styles'
 
-import CssBaseline from '@mui/material/CssBaseline';
+//components
+import Header from './Header';
+import CustomCard from './CustomCard'
+
+//Assets
 import city  from './Assets/city.webp';
 
 const useStyles = makeStyles({
-  leftNav:{
-    marginRight:"auto",
-  },
-  rightNav:{
-    marginLeft:"auto",
-    marginRight:"10rem",
-  },
   cityImg:{
     width:'100%',
     height:'92vh'
@@ -37,48 +35,12 @@ const useStyles = makeStyles({
     boxShadow:'3px 3px 3px white'
   }
 });
-const propertyBtn ={
-  backgroundColor: "green",
-  color: "white",
-  width: "15rem",
-  fontSize: "1.1rem",
-  marginRight: "1rem",
 
-}
-const loginBtn = {
-    backgroundColor: "white",
-    color: "black",
-    width: "15rem",
-    fontSize: "1.1rem",
-    marginleft: "1rem",
-}
 function Home() {
   const [btnColor, setBtnColor] = useState("error");
   const classes = useStyles();
   return (
-  <>
-    <CssBaseline />
-      <AppBar position="static" style={{backgroundColor:"black"}}>
-        <Toolbar variant="dense">
-          <div className={classes.leftNav}>
-            <Button color='inherit'>
-              <Typography variant='h4'>sk</Typography>{" "}
-              </Button>
-          </div>
-          <div>
-            <Button color='inherit' style={{mariginRight:"2rem"}}>
-              <Typography variant='h6'>Listing</Typography>{" "}
-              </Button>
-            <Button color='inherit' style={{ mariginLeft: "2rem" }}>
-              <Typography variant='h6'>Agencies</Typography>{" "} 
-              </Button>
-          </div>
-          <div className={classes.rightNav}>
-            <Button style={propertyBtn}>Add property</Button>
-            <Button style={loginBtn} >Login</Button>
-          </div>
-        </Toolbar>
-      </AppBar>
+  <> 
       <img src='{city}' className={classes.cityImg} />
       <div className={classes.overlayText}>
         <Typography variant='h1' className={classes.homeText}>FIND YOUR <span style={{color:"green"}}> NEXT PROPERTY</span> ON SK WEBSITE </Typography>
