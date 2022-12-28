@@ -2,8 +2,10 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import CustomCard from './CustomCard'
 import { Button, Typography,Grid ,AppBar,Toolbar} from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
 import {makeStyles} from '@mui/styles'
+
+import CssBaseline from '@mui/material/CssBaseline';
+import city  from './Assets/city.webp';
 
 const useStyles = makeStyles({
   leftNav:{
@@ -13,28 +15,43 @@ const useStyles = makeStyles({
     marginLeft:"auto",
     marginRight:"10rem",
   },
-  propertyBtn: {
-    backgroundColor:"green",
-    color:"white",
-    width:"15rem",
-    fontSize:"1.1rem",
-    marginRight:"1rem",
-    '&:hover': {
-      backgroundColor: "blue",
-    }
+  cityImg:{
+    width:'100%',
+    height:'92vh'
   },
-  loignBtn: {
+  overlayText:{
+    position:'absolute',
+    zIndex:'100',
+    top:'100px',
+    textAlign:'center', 
+  },
+  homeText:{
+    color:'grey',
+    fontWeight:'bolder',
+  },
+  homeBtn:{
+    fontSize:'3.5rem',
+    borderRadius:'15px',
+    backgroundColor:'green',
+    marginTop:'2rem',
+    boxShadow:'3px 3px 3px white'
+  }
+});
+const propertyBtn ={
+  backgroundColor: "green",
+  color: "white",
+  width: "15rem",
+  fontSize: "1.1rem",
+  marginRight: "1rem",
+
+}
+const loginBtn = {
     backgroundColor: "white",
     color: "black",
     width: "15rem",
     fontSize: "1.1rem",
     marginleft: "1rem",
-    '&:hover':{
-      backgroundColor:"green",
-    }
-  },
-});
-
+}
 function Home() {
   const [btnColor, setBtnColor] = useState("error");
   const classes = useStyles();
@@ -57,11 +74,16 @@ function Home() {
               </Button>
           </div>
           <div className={classes.rightNav}>
-            <Button className={classes.propertyBtn}>Add Property</Button>
-            <Button className={classes.loignBtn}>Login</Button>
+            <Button style={propertyBtn}>Add property</Button>
+            <Button style={loginBtn} >Login</Button>
           </div>
         </Toolbar>
       </AppBar>
+      <img src='{city}' className={classes.cityImg} />
+      <div className={classes.overlayText}>
+        <Typography variant='h1' className={classes.homeText}>FIND YOUR <span style={{color:"green"}}> NEXT PROPERTY</span> ON SK WEBSITE </Typography>
+        <Button variant='conatined' className={classes.homeBtn}>SEE ALL PROPERTIES</Button>
+      </div>
   </>
 
   )
