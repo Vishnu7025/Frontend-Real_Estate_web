@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'listings',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -84,8 +85,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'realestate.db',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'Real_estate',
         'USER':'postgres',
         'PASSWORD':'1234',
         'HOST':'localhost',
@@ -133,3 +134,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.User'
