@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'lbrep_course_db',
+        'NAME': 'real_estate',
         'USER':'postgres',
         'PASSWORD':'1234',
         'HOST':'localhost',
